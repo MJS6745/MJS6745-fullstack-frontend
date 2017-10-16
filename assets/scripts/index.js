@@ -6,7 +6,7 @@ const workoutEvents = require('./workout/events')
 
 $(() => {
   setAPIOrigin(location, config)
-  $('#exampleModal').on('show.bs.modal', function (event) {
+  $('#editModal').on('show.bs.modal', function (event) {
     const button = $(event.relatedTarget) // Button that triggered the modal
     const workout = button.data('resourceid') // Extract info from data-* attributes
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -23,7 +23,7 @@ $(() => {
 $(() => {
   workoutEvents.addHandlers()
   // Handler for the modal form submissions
-  $('#exampleModal').on('show.bs.modal', function (event) {
+  $('#editModal').on('show.bs.modal', function (event) {
     const button = $(event.relatedTarget) // Button that triggered the modal
     const workout = button.data('resourceid') // Extract info from data-* attributes
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
