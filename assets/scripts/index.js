@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const workoutEvents = require('./workout/events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -13,8 +14,25 @@ $(() => {
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
     const modal = $(this)
     modal.find('.modal-title').text('Altering workout ' + workout)
-    modal.find('.modal-body input').val(workout)
-    modal.find('.modal-body #message-text').text('Hey this is the text for workout ' + workout)
+    // modal.find('.modal-body input').val(workout)
+    modal.find('.modal-body #workoutDescription').text('Hey this is the description for workout ' + workout)
+  })
+})
+
+// Handlers being invoked from other areas of application
+$(() => {
+  workoutEvents.addHandlers()
+  // Handler for the modal form submissions
+  $('#exampleModal').on('show.bs.modal', function (event) {
+    const button = $(event.relatedTarget) // Button that triggered the modal
+    const workout = button.data('resourceid') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Add in
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    const modal = $(this)
+    modal.find('.modal-title').text('Altering workout ' + workout)
+    // modal.find('.modal-body input').val(workout)
+    modal.find('.modal-body #workoutDescription').text('Hey this is the description for workout ' + workout)
   })
 })
 
