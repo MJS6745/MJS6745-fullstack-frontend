@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const workoutEvents = require('./workout/events')
+const apiEvents = require('./auth/events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -11,6 +12,7 @@ $(() => {
 // Handlers being invoked from other areas of application
 $(() => {
   workoutEvents.addHandlers()
+  apiEvents.addHandlers()
   // Handler for the modal form submissions
   $('#editModal').on('show.bs.modal', function (event) {
     const button = $(event.relatedTarget) // Button that triggered the modal

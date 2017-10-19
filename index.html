@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Workout Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -81,7 +81,58 @@
           </div>
         </div>
           <div class="col-sm-4 panel panel-default">
-            <div class="panel-body">Area for my buttons</div>
+            <div class="panel-body">
+              <!-- Modal for sign up start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
+                Sign Up
+              </button>
+            </div>
+
+            <!-- Modal for sign up start -->
+            <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Sign Up</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="signUpForm">
+                      <input type="text" name="credentials[email]" placeholder="Enter your email">
+                      <input type="password" name="credentials[password]" placeholder="Enter password">
+                      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+                      <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign up end -->
+            <!--Modal for sign up success message-->
+            <div class="modal fade" id="signUpMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="signUpMessage">All set! You signed up successfully</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign up success message end -->
+            </div>
           </div>
       </div>
     </div>
