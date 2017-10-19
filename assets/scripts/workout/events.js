@@ -22,9 +22,19 @@ const addWorkout = (event) => {
     .catch(ui.addWorkoutFailure)
 }
 
+const getWorkouts = (event) => {
+  console.log('Get workouts event invoked.')
+  event.preventDefault()
+  console.log('Target is', event.target)
+  api.getWorkouts()
+    .then(ui.getWorkoutsSuccess)
+    .catch(ui.getWorkoutsFailure)
+}
+
 const addHandlers = () => {
   $('#editWorkoutForm').on('submit', editWorkout)
   $('#addWorkoutForm').on('submit', addWorkout)
+  $('#getWorkoutsForm').on('submit', getWorkouts)
 }
 
 module.exports = {

@@ -29,6 +29,7 @@ const signInSuccess = (data) => {
   $('#changePasswordButton').show()
   $('#signOutButton').show()
   $('#addWorkoutButton').show()
+  $('#getWorkoutsButton').show()
   $('#signUpButton').hide()
   $('#signInButton').hide()
 }
@@ -68,6 +69,7 @@ const signOutSuccess = () => {
   $('#changePasswordButton').hide()
   $('#signOutButton').hide()
   $('#addWorkoutButton').hide()
+  $('#getWorkoutsButton').hide()
   $('#signUpButton').show()
   $('#signInButton').show()
 }

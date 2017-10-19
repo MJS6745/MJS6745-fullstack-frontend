@@ -17,6 +17,18 @@ const addWorkout = (data) => {
   })
 }
 
+const getWorkouts = () => {
+  console.log('getWorkouts in API invoked')
+  return $.ajax({
+    url: config.apiOrigin + '/workouts',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  addWorkout
+  addWorkout,
+  getWorkouts
 }
