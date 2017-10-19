@@ -17,11 +17,11 @@
 
       <div class="row">
         <div class="col-sm-8 panel panel-default pre-scrollable">
-          <div class="panel-body container">
+          <div class="panel-body container" id="workoutlist">
             <!-- Start of test layout content, first workout -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-5">
-                Hey this is my work out content
+                Hey this is my workout info
                 <ul>
                   <li>Test content date</li>
                   <li>Test content duration</li>
@@ -36,10 +36,10 @@
               <div class="col-sm-4 workoutinfobutton">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" data-resourceid="123">Delete Workout</button>
               </div>
-            </div>
+            </div> -->
             <!-- End of test layout content -->
             <!-- Start of test layout content, first workout -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-5">
                 Hey this is my work out content
                 <ul>
@@ -56,10 +56,10 @@
               <div class="col-sm-4 workoutinfobutton">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" data-resourceid="456">Delete Workout</button>
               </div>
-            </div>
+            </div> -->
             <!-- End of test layout content -->
             <!-- Start of test layout content, first workout -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-5">
                 Hey this is my work out content
                 <ul>
@@ -76,7 +76,7 @@
               <div class="col-sm-4 workoutinfobutton">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" data-resourceid="789">Delete Workout</button>
               </div>
-            </div>
+            </div> -->
             <!-- End of test layout content -->
           </div>
         </div>
@@ -410,7 +410,7 @@
       </div>
     </div>
     <!-- Start content for edit workout modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -421,6 +421,7 @@
           </div>
           <div class="modal-body">
             <form id="editWorkoutForm">
+              <input type="hidden" name=workout[id]>
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Date:</label>
                 <input type="text" name="workout[workout_date]" class="form-control" id="workoutDate">
@@ -453,7 +454,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- End of content for edit workout modal -->
     </body>
 </html>

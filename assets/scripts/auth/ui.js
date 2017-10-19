@@ -70,6 +70,7 @@ const signOutSuccess = () => {
   $('#signOutButton').hide()
   $('#addWorkoutButton').hide()
   $('#getWorkoutsButton').hide()
+  $('#workoutlist').empty()
   $('#signUpButton').show()
   $('#signInButton').show()
 }

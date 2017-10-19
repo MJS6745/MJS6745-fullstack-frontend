@@ -1,0 +1,70 @@
+{{#each workouts as |workout|}}
+<div class="row">
+  <div class="col-sm-5">
+    Workout {{workout.id}}
+    <ul>
+      <li>Date: {{workout.workout_date}}</li>
+      <li>Time of Day: {{workout.workout_time}}</li>
+      <li>Duration: {{workout.duration}}</li>
+      <li>Difficulty: {{workout.difficulty}}</li>
+      <li>Type: {{workout.exercise_type}}</li>
+      <li>Description: {{workout.description}}</li>
+    </ul>
+  </div>
+  <!-- Button for edit modal start -->
+  <div class="col-sm-4 workoutinfobutton">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editWorkoutModal{{workout.id}}" data-resourceid="{{workout.id}}">Edit Workout</button>
+  </div>
+  <!-- Button for edit modal end -->
+  <!-- Edit modal start -->
+  <div class="modal fade" id="editWorkoutModal{{workout.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Edit My Workout</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="editWorkoutForm">
+            <input type="hidden" name=workout[id] value="{{workout.id}}">
+            <div class="form-group">
+              <label for="workout-date-input">Date</label>
+              <input class="form-control" type="date" name="workout[workout_date]" value="{{workout.workout_date}}" id="workout-date-input" required>
+            </div>
+            <div class="form-group">
+              <label for="workout-time-input">Time of Day</label>
+              <input class="form-control" type="text" name="workout[workout_time]" value="{{workout.workout_time}}" id="workout-time-input" required>
+            </div>
+            <div class="form-group">
+              <label for="duration-input">Duration (in minutes)</label>
+              <input class="form-control" type="number" min="1" max="999" name="workout[duration]" value="{{workout.duration}}" id="duration-input" required>
+            </div>
+            <div class="form-group">
+              <label for="difficulty-input">Difficulty (1-10)</label>
+              <input class="form-control" type="number" min="1" max="10" name="workout[difficulty]" value="{{workout.difficulty}}" id="difficulty-input" required>
+            </div>
+            <div class="form-group">
+              <label for="exercise-type-input">Exercise Type</label>
+              <input class="form-control" type="text" name="workout[exercise_type]" value="{{workout.exercise_type}}" id="exercise-type-input" required>
+            </div>
+            <div class="form-group">
+              <label for="description-input">Description</label>
+              <textarea class="form-control" rows="4" name="workout[description]" value="{{workout.description}}" id="description-input"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit modal end -->
+  <div class="col-sm-4 workoutinfobutton">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" data-resourceid="123">Delete Workout</button>
+  </div>
+</div>
+{{/each}}

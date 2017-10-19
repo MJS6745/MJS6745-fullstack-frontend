@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showWorkoutsTemplate = require('../templates/workouts.handlebars')
 
 const addWorkoutSuccess = (data) => {
   console.log('Add workout success invoked. Data is', data)
@@ -21,6 +22,9 @@ const addWorkoutFailure = (error) => {
 const getWorkoutsSuccess = (data) => {
   console.log('Get workout success invoked. Data is', data)
   $('#getWorkoutsModal').modal('hide')
+  const showWorkoutsHtml = showWorkoutsTemplate({ workouts: data.workouts })
+  console.log('Show workout html is', showWorkoutsHtml)
+  $('#workoutlist').append(showWorkoutsHtml)
 }
 
 const getWorkoutsFailure = (error) => {
