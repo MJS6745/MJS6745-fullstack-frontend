@@ -35,7 +35,7 @@ const addHandlers = () => {
   $('#addWorkoutForm').on('submit', addWorkout)
   $('#getWorkoutsForm').on('submit', getWorkouts)
   // $('#editWorkoutForm').on('submit', editWorkout)
-  $('.content').on('submit', '.editWorkoutForm', editWorkout)
+  $('#workoutlist').on('submit', '.editWorkoutForm', editWorkout)
 }
 
 module.exports = {

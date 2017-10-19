@@ -22,8 +22,9 @@ const addWorkoutFailure = (error) => {
 const getWorkoutsSuccess = (data) => {
   console.log('Get workout success invoked. Data is', data)
   $('#getWorkoutsModal').modal('hide')
+  $('#workoutlist').empty()
   const showWorkoutsHtml = showWorkoutsTemplate({ workouts: data.workouts })
-  console.log('Show workout html is', showWorkoutsHtml)
+  // console.log('Show workout html is', showWorkoutsHtml)
   $('#workoutlist').append(showWorkoutsHtml)
 }
 
