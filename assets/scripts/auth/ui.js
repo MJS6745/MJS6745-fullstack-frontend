@@ -56,11 +56,35 @@ const changePasswordFailure = (error) => {
   $('#changePasswordMessageModal').modal('show')
 }
 
+const signOutSuccess = () => {
+  console.log('signOutSuccess invoked')
+  console.log('Store data before clear is', store.user)
+  store.user = null
+  console.log('Store data after clear is', store.user)
+  $('#signOutModal').modal('hide')
+  $('#signOutMessage').text('You have been signed out successfully')
+  $('#signOutMessageModal').modal('show')
+  $('#changePasswordButton').hide()
+  $('#signOutButton').hide()
+  $('#signUpButton').show()
+  $('#signInButton').show()
+}
+
+const signOutFailure = (error) => {
+  console.log('signOutFailure invoked')
+  console.log('Error is', error)
+  $('#signOutModal').modal('hide')
+  $('#signOutMessage').text('Oops! There was an error')
+  $('#signOutMessageModal').modal('show')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }

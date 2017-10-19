@@ -52,10 +52,20 @@ const onChangePassword = (event) => {
   }
 }
 
+const onSignOut = (event) => {
+  event.preventDefault()
+  console.log('onSignOut invoked. Target is', event.target)
+  console.log('Store data is', store.user)
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const addHandlers = () => {
   $('#signUpForm').on('submit', onSignUp)
   $('#signInForm').on('submit', onSignIn)
   $('#changePasswordForm').on('submit', onChangePassword)
+  $('#signOutForm').on('submit', onSignOut)
 }
 
 module.exports = {
