@@ -40,9 +40,27 @@ const signInFailure = (error) => {
   $('#signInMessageModal').modal('show')
 }
 
+const changePasswordSuccess = (data) => {
+  console.log('changePasswordSuccess invoked. Data is ', data)
+  $('#changePasswordModal').modal('hide')
+  document.getElementById('changePasswordForm').reset()
+  $('#changePasswordMessage').text('All set! Your password has been updated')
+  $('#changePasswordMessageModal').modal('show')
+}
+
+const changePasswordFailure = (error) => {
+  console.log('changePasswordFailure invoked. Error is', error)
+  $('#changePasswordModal').modal('hide')
+  document.getElementById('changePasswordForm').reset()
+  $('#changePasswordMessage').text('Oops! There was an error')
+  $('#changePasswordMessageModal').modal('show')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }

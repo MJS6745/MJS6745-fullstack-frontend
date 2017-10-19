@@ -11,6 +11,8 @@ $(() => {
 
 // Handlers being invoked from other areas of application
 $(() => {
+  $('#changePasswordButton').hide()
+  $('#signOutButton').hide()
   workoutEvents.addHandlers()
   apiEvents.addHandlers()
   // Handler for the modal form submissions

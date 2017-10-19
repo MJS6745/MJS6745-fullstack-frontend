@@ -22,7 +22,20 @@ const signIn = (data) => {
   })
 }
 
+const changePassword = (data) => {
+  console.log('Change pw user data is', data)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }
