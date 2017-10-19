@@ -306,23 +306,23 @@
                     <form class="" id="addWorkoutForm">
                       <div class="form-group">
                         <label for="workout-date-input">Date</label>
-                        <input class="form-control" type="date" name="workout[workout_date]" value="2017-10-10" id="workout-date-input">
+                        <input class="form-control" type="date" name="workout[workout_date]" id="workout-date-input" required>
                       </div>
                       <div class="form-group">
                         <label for="workout-time-input">Time of Day</label>
-                        <input class="form-control" type="text" name="workout[workout_time]" placeholder="ex. Morning, Afternoon, Evening" id="workout-time-input">
+                        <input class="form-control" type="text" name="workout[workout_time]" placeholder="ex. Morning, Afternoon, Evening" id="workout-time-input" required>
                       </div>
                       <div class="form-group">
                         <label for="duration-input">Duration (in minutes)</label>
-                        <input class="form-control" type="number" min="1" max="999" name="workout[duration]" id="duration-input">
+                        <input class="form-control" type="number" min="1" max="999" name="workout[duration]" id="duration-input" required>
                       </div>
                       <div class="form-group">
                         <label for="difficulty-input">Difficulty (1-10)</label>
-                        <input class="form-control" type="number" min="1" max="10" name="workout[difficulty]" id="difficulty-input">
+                        <input class="form-control" type="number" min="1" max="10" name="workout[difficulty]" id="difficulty-input" required>
                       </div>
                       <div class="form-group">
                         <label for="exercise-type-input">Exercise Type</label>
-                        <input class="form-control" type="text" name="workout[exercise_type]" placeholder="ex. Running, Weights, etc." id="exercise-type-input">
+                        <input class="form-control" type="text" name="workout[exercise_type]" placeholder="ex. Running, Weights, etc." id="exercise-type-input" required>
                       </div>
                       <div class="form-group">
                         <label for="description-input">Description</label>
@@ -340,11 +340,11 @@
             <!-- Modal for workout end -->
 
             <!--Modal for add workout message start -->
-            <div class="modal fade" id="signInMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addWorkoutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h3 class="modal-title" id="signInMessage">Sign in successful!</h3>
+                    <h3 class="modal-title" id="addWorkoutMessage">Workout successfully added</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

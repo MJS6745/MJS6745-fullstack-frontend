@@ -28,6 +28,7 @@ const signInSuccess = (data) => {
   $('#signInMessageModal').modal('show')
   $('#changePasswordButton').show()
   $('#signOutButton').show()
+  $('#addWorkoutButton').show()
   $('#signUpButton').hide()
   $('#signInButton').hide()
 }
@@ -66,6 +67,7 @@ const signOutSuccess = () => {
   $('#signOutMessageModal').modal('show')
   $('#changePasswordButton').hide()
   $('#signOutButton').hide()
+  $('#addWorkoutButton').hide()
   $('#signUpButton').show()
   $('#signInButton').show()
 }
