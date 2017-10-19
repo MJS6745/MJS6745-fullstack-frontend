@@ -132,6 +132,57 @@
               </div>
             </div>
             <!-- Modal for sign up success message end -->
+
+            <!-- Modal for sign in start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" id="signInButton">
+                Sign In
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="signInForm">
+                      <input type="text" name="credentials[email]" placeholder="Enter your email">
+                      <input type="password" name="credentials[password]" placeholder="Enter password">
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign in end -->
+
+            <!--Modal for sign in message-->
+            <div class="modal fade" id="signInMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="signInMessage">Sign in successful!</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign in success end -->
             </div>
           </div>
       </div>
