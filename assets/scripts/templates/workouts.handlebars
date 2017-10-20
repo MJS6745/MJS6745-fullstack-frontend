@@ -63,8 +63,35 @@
     </div>
   </div>
   <!-- Edit modal end -->
+  <!-- Modal for delete workout start -->
+  <!-- Button start -->
   <div class="col-sm-4 workoutinfobutton">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" data-resourceid="123">Delete Workout</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteWorkoutModal{{workout.id}}" data-resourceid="{{workout.id}}">Delete Workout</button>
   </div>
+  <!-- Button end -->
+  <!-- Delete confirmation modal start -->
+  <div class="modal fade" id="deleteWorkoutModal{{workout.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to delete workout {{workout.id}}?</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="deleteWorkoutForm">
+            <input type="hidden" name=workout[id] value="{{workout.id}}">
+            <button type="submit" class="btn btn-primary">Yes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Delete confirmation modal end -->
+  <!-- Modal for delete workout end -->
 </div>
 {{/each}}

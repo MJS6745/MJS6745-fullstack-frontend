@@ -41,8 +41,21 @@ const editWorkout = (data) => {
   })
 }
 
+const deleteWorkout = (data) => {
+  console.log('deleteWorkout in API invoked')
+  console.log('Data being passed is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/workouts/' + data.workout.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addWorkout,
   getWorkouts,
-  editWorkout
+  editWorkout,
+  deleteWorkout
 }

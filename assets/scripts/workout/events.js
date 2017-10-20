@@ -26,7 +26,7 @@ const addWorkout = (event) => {
 }
 
 const getWorkouts = (event) => {
-  console.log('Get workouts event invoked.')
+  console.log('Get workouts event invoked')
   event.preventDefault()
   console.log('Target is', event.target)
   api.getWorkouts()
@@ -34,11 +34,24 @@ const getWorkouts = (event) => {
     .catch(ui.getWorkoutsFailure)
 }
 
+const deleteWorkout = (event) => {
+  console.log('Delete workout event invoked')
+  event.preventDefault()
+  console.log('Target is', event.target)
+  const data = getFormFields(event.target)
+  const modalName = '#deleteWorkoutModal' + data.workout.id
+  api.deleteWorkout(data)
+    .then($(modalName).modal('hide'))
+    .then(ui.deleteWorkoutSuccess)
+    .catch(ui.deleteWorkoutFailure)
+}
+
 const addHandlers = () => {
   $('#addWorkoutForm').on('submit', addWorkout)
   $('#getWorkoutsForm').on('submit', getWorkouts)
   // $('#editWorkoutForm').on('submit', editWorkout)
   $('#workoutlist').on('submit', '.editWorkoutForm', editWorkout)
+  $('#workoutlist').on('submit', '.deleteWorkoutForm', deleteWorkout)
 }
 
 module.exports = {
