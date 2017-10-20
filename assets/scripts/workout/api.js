@@ -28,7 +28,21 @@ const getWorkouts = () => {
   })
 }
 
+const editWorkout = (data) => {
+  console.log('updateWorkout in API invoked')
+  console.log('Data being passed is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/workouts/' + data.workout.id,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addWorkout,
-  getWorkouts
+  getWorkouts,
+  editWorkout
 }

@@ -9,6 +9,9 @@ const editWorkout = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('Edit workout form data is ', data)
+  api.editWorkout(data)
+    .then(ui.editWorkoutSuccess)
+    .catch(ui.editWorkoutFailure)
 }
 
 const addWorkout = (event) => {

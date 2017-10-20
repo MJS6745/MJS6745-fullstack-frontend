@@ -34,9 +34,21 @@ const getWorkoutsFailure = (error) => {
   $('#getWorkoutsMessageModal').modal('show')
 }
 
+const editWorkoutSuccess = (data) => {
+  console.log('editWorkoutSuccess invoked. Data is', data)
+  const modalName = '#editWorkoutModal' + data.workout.id
+  $(modalName).modal('hide')
+}
+
+const editWorkoutFailure = (error) => {
+  console.log('Edit workout failure. Error is', error)
+}
+
 module.exports = {
   addWorkoutSuccess,
   addWorkoutFailure,
   getWorkoutsSuccess,
-  getWorkoutsFailure
+  getWorkoutsFailure,
+  editWorkoutSuccess,
+  editWorkoutFailure
 }
