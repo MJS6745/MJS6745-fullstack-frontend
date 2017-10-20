@@ -45,8 +45,8 @@ const editWorkoutSuccess = (data) => {
 
 const editWorkoutFailure = (error) => {
   console.log('Edit workout failure. Error is', error)
-  const modalName = '#editWorkoutModal' + error.workout.id
-  $(modalName).modal('hide')
+  // const modalName = '#editWorkoutModal' + error.workout.id
+  // $(modalName).modal('hide')
   $('#editWorkoutsMessageTitle').text('Oops! There was an error')
   $('#editWorkoutsMessageBody').text('Please try again later')
   $('#editWorkoutsMessageModal').modal('show')
@@ -59,8 +59,6 @@ const deleteWorkoutSuccess = (data) => {
 
 const deleteWorkoutFailure = (error) => {
   console.log('Delete workout failure. Error is', error)
-  const modalName = '#deleteWorkoutModal' + error.workout.id
-  $(modalName).modal('hide')
   $('#deleteWorkoutMessageTitle').text('Oops! There was an error')
   $('#deleteWorkoutMessageBody').text('Please try again later')
   $('#deleteWorkoutMessageModal').modal('show')
@@ -78,5 +76,6 @@ module.exports = {
   editWorkoutSuccess,
   editWorkoutFailure,
   deleteWorkoutSuccess,
-  deleteWorkoutFailure
+  deleteWorkoutFailure,
+  clearWorkouts
 }

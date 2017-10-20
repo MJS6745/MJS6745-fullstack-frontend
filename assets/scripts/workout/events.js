@@ -41,7 +41,7 @@ const deleteWorkout = (event) => {
   const data = getFormFields(event.target)
   const modalName = '#deleteWorkoutModal' + data.workout.id
   api.deleteWorkout(data)
-    .then($(modalName).modal('hide'))
+    .then($(modalName).modal('hide').on('hidden.bs.modal', ui.clearWorkouts))
     .then(ui.deleteWorkoutSuccess)
     .catch(ui.deleteWorkoutFailure)
 }
