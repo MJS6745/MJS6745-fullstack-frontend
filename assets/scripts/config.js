@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://cryptic-reef-91253.herokuapp.com/',
+    production: 'https://cryptic-reef-91253.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
