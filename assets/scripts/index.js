@@ -15,6 +15,7 @@ $(() => {
   $('#signOutButton').hide()
   $('#addWorkoutButton').hide()
   $('#getWorkoutsButton').hide()
+  $('#analyzeWorkoutsButton').hide()
   workoutEvents.addHandlers()
   apiEvents.addHandlers()
   // Handler for the modal form submissions

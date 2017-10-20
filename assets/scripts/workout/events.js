@@ -46,9 +46,19 @@ const deleteWorkout = (event) => {
     .catch(ui.deleteWorkoutFailure)
 }
 
+const analyzeWorkouts = (event) => {
+  console.log('Analyze workout event invoked')
+  event.preventDefault()
+  console.log('Target is', event.target)
+  api.getWorkouts()
+    .then(ui.analyzeWorkoutSuccess)
+    .catch(ui.getWorkoutsFailure)
+}
+
 const addHandlers = () => {
   $('#addWorkoutForm').on('submit', addWorkout)
   $('#getWorkoutsForm').on('submit', getWorkouts)
+  $('#analyzeWorkoutsForm').on('submit', analyzeWorkouts)
   // $('#editWorkoutForm').on('submit', editWorkout)
   $('#workoutlist').on('submit', '.editWorkoutForm', editWorkout)
   $('#workoutlist').on('submit', '.deleteWorkoutForm', deleteWorkout)
