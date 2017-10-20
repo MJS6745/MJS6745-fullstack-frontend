@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const showWorkoutsTemplate = require('../templates/workouts.handlebars')
+const events = require('./events')
 
 const addWorkoutSuccess = (data) => {
   console.log('Add workout success invoked. Data is', data)
@@ -35,13 +36,17 @@ const getWorkoutsFailure = (error) => {
 }
 
 const editWorkoutSuccess = (data) => {
+  // $('#workoutlist').empty()
   console.log('editWorkoutSuccess invoked. Data is', data)
   const modalName = '#editWorkoutModal' + data.workout.id
   $(modalName).modal('hide')
+  $('#editWorkoutsMessageModal').modal('show')
 }
 
 const editWorkoutFailure = (error) => {
   console.log('Edit workout failure. Error is', error)
+  $('#editWorkoutMessageTitle').text('Oops! There was an error')
+  $('#editWorkoutMessageBody').text('Please try again later')
 }
 
 module.exports = {
