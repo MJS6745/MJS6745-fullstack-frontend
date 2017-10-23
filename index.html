@@ -350,70 +350,6 @@
             </div>
             <!-- Modal for get workouts message start -->
             <!-- Modal for get workouts end -->
-
-            <!-- Modal for analyze workouts start -->
-            <!-- Button start -->
-            <div class="workoutinfobutton">
-              <button type="button" class="btn btn-primary" data-toggle="modal" id="analyzeWorkoutsButton" data-target="#analyzeWorkoutsModal">
-                Analyze My Workouts
-              </button>
-            </div>
-            <!-- Button end -->
-            <!-- Modal start -->
-            <div class="modal fade" id="analyzeWorkoutsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to analyze your workouts?</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form class="" id="analyzeWorkoutsForm">
-                      <button type="submit" class="btn btn-primary">Yes</button>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Modal End -->
-            <!-- Modal for analyze workouts message start -->
-            <div class="modal fade" id="analyzeWorkoutsMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="analyzeWorkoutsMessage">Your workout analysis</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body" id="analyzeWorkoutsBody">
-                    <table class="table" id="workoutanalysis">
-                      <thead>
-                        <tr>
-                          <th>Time of Day</th>
-                          <th>Number of Workouts</th>
-                          <th>Average Duration</th>
-                          <th>Average Difficulty</th>
-                        </tr>
-                      </thead>
-                      <tbody id="analysistable">
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Modal for analyze workouts message start -->
-            <!-- Modal for analyze workouts end -->
-
             <!-- Modal for edit workouts message start -->
             <div class="modal fade" id="editWorkoutsMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -456,5 +392,52 @@
           </div>
       </div>
     </div>
+    <!-- Start content for edit workout modal -->
+    <!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit my Workout/h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editWorkoutForm">
+              <input type="hidden" name=workout[id]>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Date:</label>
+                <input type="text" name="workout[workout_date]" class="form-control" id="workoutDate">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Time:</label>
+                <input type="text" name="workout[workout_time]" class="form-control" id="workoutTime">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Duration:</label>
+                <input type="text" name="workout[duration]" class="form-control" id="workoutDuration">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Difficulty:</label>
+                <input type="text" name="workout[difficulty]" class="form-control" id="workoutDifficulty">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Type of Workout:</label>
+                <input type="text" name="workout[exercise_type]" class="form-control" id="workoutType">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Description:</label>
+                <textarea class="form-control" name="workout[description]" id="workoutDescription"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- End of content for edit workout modal -->>
     </body>
 </html>
