@@ -30,7 +30,7 @@ For future iterations of the front end application I would like to refine the da
 
 In addition, future iterations could include the ability for a user to generate their own random workouts based on inputs they provide about how much time they have, their desired workout intensity, as well as providing info about what equipment they have available.
 
-## Planning Process
+## Planning and Development Process
 
 This section will focus on the planning process used specifically for the front end. For information on the planning process for my API, please visit that repo (link in first section above).
 
