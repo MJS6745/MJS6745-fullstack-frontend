@@ -33,9 +33,9 @@ const onSignIn = (event) => {
 
 const onChangePassword = (event) => {
   event.preventDefault()
-  console.log('onChangePassword invoked')
+  // console.log('onChangePassword invoked')
   const data = getFormFields(event.target)
-  console.log('Data is', data)
+  // console.log('Data is', data)
   if (store.user !== undefined) {
   } else {
     $('#changePasswordMessage').text('Oops! Looks like youre not logged in yet')
