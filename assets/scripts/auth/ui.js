@@ -11,7 +11,7 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (error) => {
-  console.log('Error is', error)
+  // console.log('Error is', error)
   $('#signUpModal').modal('hide')
   document.getElementById('signUpForm').reset()
   $('#signUpMessage').text('Oops! There was an error')
@@ -19,9 +19,9 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
-  console.log('signInSuccess invoked. Data coming back from sign in API is', data)
+  // console.log('signInSuccess invoked. Data coming back from sign in API is', data)
   store.user = data.user
-  console.log('Store data after sign in API call is currently', store.user)
+  // console.log('Store data after sign in API call is currently', store.user)
   $('#signInModal').modal('hide')
   document.getElementById('signInForm').reset()
   $('#signInMessage').text('Sign in successful!')
@@ -36,7 +36,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
-  console.log('Error is', error)
+  // console.log('Error is', error)
   $('#signInModal').modal('hide')
   document.getElementById('signInForm').reset()
   $('#signInMessage').text('Oops! Invalid login')
@@ -44,7 +44,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('changePasswordSuccess invoked. Data is ', data)
+  // console.log('changePasswordSuccess invoked. Data is ', data)
   $('#changePasswordModal').modal('hide')
   document.getElementById('changePasswordForm').reset()
   $('#changePasswordMessage').text('All set! Your password has been updated')
@@ -52,7 +52,7 @@ const changePasswordSuccess = (data) => {
 }
 
 const changePasswordFailure = (error) => {
-  console.log('changePasswordFailure invoked. Error is', error)
+  // console.log('changePasswordFailure invoked. Error is', error)
   $('#changePasswordModal').modal('hide')
   document.getElementById('changePasswordForm').reset()
   $('#changePasswordMessage').text('Oops! There was an error')
@@ -60,10 +60,10 @@ const changePasswordFailure = (error) => {
 }
 
 const signOutSuccess = () => {
-  console.log('signOutSuccess invoked')
-  console.log('Store data before clear is', store.user)
+  // console.log('signOutSuccess invoked')
+  // console.log('Store data before clear is', store.user)
   store.user = null
-  console.log('Store data after clear is', store.user)
+  // console.log('Store data after clear is', store.user)
   $('#signOutModal').modal('hide')
   $('#signOutMessage').text('You have been signed out successfully')
   $('#signOutMessageModal').modal('show')
@@ -78,8 +78,8 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = (error) => {
-  console.log('signOutFailure invoked')
-  console.log('Error is', error)
+  // console.log('signOutFailure invoked')
+  // console.log('Error is', error)
   $('#signOutModal').modal('hide')
   $('#signOutMessage').text('Oops! There was an error')
   $('#signOutMessageModal').modal('show')

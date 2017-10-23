@@ -7,10 +7,10 @@ const store = require('../store')
 
 const onSignUp = (event) => {
   event.preventDefault()
-  console.log('onSignUp invoked')
-  console.log('Target is', event.target)
+  // console.log('onSignUp invoked')
+  // console.log('Target is', event.target)
   const data = getFormFields(event.target)
-  console.log('Data is ', data)
+  // console.log('Data is ', data)
   if (data.credentials.email !== '' && data.credentials.password !== '') {
     api.signUp(data)
       .then(ui.signUpSuccess)
@@ -22,10 +22,10 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
-  console.log('onSignIn invoked')
+  // console.log('onSignIn invoked')
   const data = getFormFields(event.target)
-  console.log('Target data on sign in is', event.target)
-  console.log('Store data before API call is', store.data)
+  // console.log('Target data on sign in is', event.target)
+  // console.log('Store data before API call is', store.data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -54,8 +54,8 @@ const onChangePassword = (event) => {
 
 const onSignOut = (event) => {
   event.preventDefault()
-  console.log('onSignOut invoked. Target is', event.target)
-  console.log('Store data is', store.user)
+  // console.log('onSignOut invoked. Target is', event.target)
+  // console.log('Store data is', store.user)
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

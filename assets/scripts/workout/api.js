@@ -5,8 +5,8 @@ const store = require('../store')
 const ui = require('./ui')
 
 const addWorkout = (data) => {
-  console.log('API create game is being invoked')
-  console.log('Data being passed is ', data)
+  // console.log('API create game is being invoked')
+  // console.log('Data being passed is ', data)
   return $.ajax({
     url: config.apiOrigin + '/workouts',
     method: 'POST',
@@ -18,7 +18,7 @@ const addWorkout = (data) => {
 }
 
 const getWorkouts = () => {
-  console.log('getWorkouts in API invoked')
+  // console.log('getWorkouts in API invoked')
   return $.ajax({
     url: config.apiOrigin + '/workouts',
     method: 'GET',
@@ -29,8 +29,8 @@ const getWorkouts = () => {
 }
 
 const editWorkout = (data) => {
-  console.log('updateWorkout in API invoked')
-  console.log('Data being passed is ', data)
+  // console.log('updateWorkout in API invoked')
+  // console.log('Data being passed is ', data)
   return $.ajax({
     url: config.apiOrigin + '/workouts/' + data.workout.id,
     method: 'PATCH',
@@ -42,8 +42,8 @@ const editWorkout = (data) => {
 }
 
 const deleteWorkout = (data) => {
-  console.log('deleteWorkout in API invoked')
-  console.log('Data being passed is ', data)
+  // console.log('deleteWorkout in API invoked')
+  // console.log('Data being passed is ', data)
   return $.ajax({
     url: config.apiOrigin + '/workouts/' + data.workout.id,
     method: 'DELETE',
