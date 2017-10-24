@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Workout Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <div class="container">
+      <h1>Workout Tracker</h1>
+      <h4 class="signature">By Mark Smets</h4>
+      <p>Use the buttons on the right to track your workouts. Users must be signed in before they can view or edit their workouts.</p>
+      <div class="row">
+        <div class="col-sm-8 panel panel-default pre-scrollable">
+          <div class="panel-body container" id="workoutlist">
+            <!-- Start of container for workoutlist -->
+            <!-- End of container for workoutlist -->
+          </div>
+        </div>
+          <div class="col-sm-4 panel panel-default">
+            <div class="panel-body">
+              <!-- Modal for sign up start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
+                Sign Up
+              </button>
+            </div>
+
+            <!-- Modal for sign up start -->
+            <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Sign Up</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="signUpForm">
+                      <input type="text" name="credentials[email]" placeholder="Enter your email">
+                      <input type="password" name="credentials[password]" placeholder="Enter password">
+                      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+                      <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign up end -->
+            <!--Modal for sign up success message-->
+            <div class="modal fade" id="signUpMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="signUpMessage">All set! You signed up successfully</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign up success message end -->
+
+            <!-- Modal for sign in start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" id="signInButton">
+                Sign In
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="signInForm">
+                      <input type="text" name="credentials[email]" placeholder="Enter your email">
+                      <input type="password" name="credentials[password]" placeholder="Enter password">
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign in end -->
+
+            <!--Modal for sign in message-->
+            <div class="modal fade" id="signInMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="signInMessage">Sign in successful!</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign in success end -->
+
+            <!-- Modal for change pw start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="changePasswordButton" data-target="#changePasswordModal">
+                Change Password
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Change Password</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="changePasswordForm">
+                      <input type="password" name="passwords[old]" placeholder="Old Password">
+                      <input type="password" name="passwords[new]" placeholder="New Password">
+                      <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for change pw end -->
+
+            <!--Modal for change pw message-->
+            <div class="modal fade" id="changePasswordMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="changePasswordMessage">All set! Your password has been updated</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for change pw message end -->
+
+            <!-- Modal for sign out start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="signOutButton" data-target="#signOutModal">
+                Sign Out
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Sign Out</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="signOutForm">
+                      <h3>Are you sure you want to sign out?</h3>
+                      <button type="submit" class="btn btn-primary">Yes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign out end -->
+
+            <!--Modal for sign out message-->
+            <div class="modal fade" id="signOutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="signOutMessage">You have been signed out successfully</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for sign out message end -->
+
+            <!-- Modal for add Workout start -->
+            <!-- Button -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="addWorkoutButton" data-target="#addWorkoutModal">
+                Add Workout
+              </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="addWorkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add a Workout</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="addWorkoutForm">
+                      <div class="form-group">
+                        <label for="workout-date-input">Date</label>
+                        <input class="form-control" type="date" name="workout[workout_date]" id="workout-date-input" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="workout-time-input">Time of Day</label>
+                        <input class="form-control" type="text" name="workout[workout_time]" placeholder="ex. Morning, Afternoon, Evening" id="workout-time-input" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="duration-input">Duration (in minutes)</label>
+                        <input class="form-control" type="number" min="1" max="999" name="workout[duration]" id="duration-input" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="difficulty-input">Difficulty (1-10)</label>
+                        <input class="form-control" type="number" min="1" max="10" name="workout[difficulty]" id="difficulty-input" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exercise-type-input">Exercise Type</label>
+                        <input class="form-control" type="text" name="workout[exercise_type]" placeholder="ex. Running, Weights, etc." id="exercise-type-input" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="description-input">Description</label>
+                        <textarea class="form-control" rows="4" name="workout[description]" id="description-input"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Add Workout</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for workout end -->
+            <!--Modal for add workout message start -->
+            <div class="modal fade" id="addWorkoutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="addWorkoutMessage">Workout successfully added</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="addWorkoutMessageBody">Please click "Get My Workouts" for an updated list of workouts
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Modal for add workout message end -->
+            <!-- Modal for add Workout end -->
+
+            <!-- Modal for get workouts start -->
+            <!-- Button start -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="getWorkoutsButton" data-target="#getWorkoutsModal">
+                Get My Workouts
+              </button>
+            </div>
+            <!-- Button end -->
+            <!-- Modal start -->
+            <div class="modal fade" id="getWorkoutsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to view your workouts?</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="getWorkoutsForm">
+                      <button type="submit" class="btn btn-primary">Yes</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal End -->
+            <!-- Modal for get workouts message start -->
+            <div class="modal fade" id="getWorkoutsMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="getWorkoutsMessage">Oops! There was an error</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for get workouts message start -->
+            <!-- Modal for get workouts end -->
+
+            <!-- Modal for analyze workouts start -->
+            <!-- Button start -->
+            <div class="workoutinfobutton">
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="analyzeWorkoutsButton" data-target="#analyzeWorkoutsModal">
+                Analyze My Workouts
+              </button>
+            </div>
+            <!-- Button end -->
+            <!-- Modal start -->
+            <div class="modal fade" id="analyzeWorkoutsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to analyze your workouts?</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" id="analyzeWorkoutsForm">
+                      <button type="submit" class="btn btn-primary">Yes</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal End -->
+            <!-- Modal for analyze workouts message start -->
+            <div class="modal fade" id="analyzeWorkoutsMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="analyzeWorkoutsMessage">Your workout analysis</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="analyzeWorkoutsBody">
+                    <table class="table" id="workoutanalysis">
+                      <thead>
+                        <tr>
+                          <th>Time of Day</th>
+                          <th>Number of Workouts</th>
+                          <th>Average Duration</th>
+                          <th>Average Difficulty</th>
+                        </tr>
+                      </thead>
+                      <tbody id="analysistable">
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for analyze workouts message start -->
+            <!-- Modal for analyze workouts end -->
+
+            <!-- Modal for edit workouts message start -->
+            <div class="modal fade" id="editWorkoutsMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="editWorkoutsMessageTitle">Your workout has been updated.</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="editWorkoutsMessageBody">Please click "Get My Workouts" for an updated list of your workouts
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for edit workouts message end-->
+            <!-- Modal for delete workout message start -->
+            <div class="modal fade" id="deleteWorkoutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="deleteWorkoutMessageTitle">Your workout has been deleted.</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="editWorkoutsMessageBody">Please click "Get My Workouts" for an updated list of your workouts
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for delete workout message end-->
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="panel panel-default" id="randomworkout">
+            <div class="workoutinfobutton">
+              <button name="singlebutton" class="btn btn-primary center-block" id="randomworkoutbutton">Workout Idea</button>
+            </div>
+            <div>
+              <p>Click the button above to get a new workout idea</p>
+              <h4>Warmup:</h4><p id="warmupcontainer"></p>
+              <h4>Mobility:</h4><p id="mobilitycontainer"></p>
+              <h4>Strength:</h4><p id="strengthcontainer"></p>
+              <h4>Workout:</h4><p id="randomworkoutcontainer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+</html>
